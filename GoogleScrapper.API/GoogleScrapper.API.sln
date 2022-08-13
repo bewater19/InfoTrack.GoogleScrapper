@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleScrapper.API", "GoogleScrapper.API\GoogleScrapper.API.csproj", "{9DCA0092-2DC6-48D4-990A-6917EDD24F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleScrapper.Application", "GoogleScrapper.Application\GoogleScrapper.Application.csproj", "{5465203F-5415-4081-94D6-A815472A65C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleScrapper.Domain", "GoogleScrapper.Domain\GoogleScrapper.Domain.csproj", "{EA7120A5-9D8F-49A8-BD95-F78F332ADC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleScrapper.Test", "GoogleScrapper.Test\GoogleScrapper.Test.csproj", "{FA27B967-83E0-4938-BC09-F2E6A7E91E94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DCA0092-2DC6-48D4-990A-6917EDD24F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCA0092-2DC6-48D4-990A-6917EDD24F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DCA0092-2DC6-48D4-990A-6917EDD24F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCA0092-2DC6-48D4-990A-6917EDD24F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5465203F-5415-4081-94D6-A815472A65C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5465203F-5415-4081-94D6-A815472A65C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5465203F-5415-4081-94D6-A815472A65C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5465203F-5415-4081-94D6-A815472A65C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7120A5-9D8F-49A8-BD95-F78F332ADC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7120A5-9D8F-49A8-BD95-F78F332ADC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7120A5-9D8F-49A8-BD95-F78F332ADC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7120A5-9D8F-49A8-BD95-F78F332ADC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA27B967-83E0-4938-BC09-F2E6A7E91E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA27B967-83E0-4938-BC09-F2E6A7E91E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA27B967-83E0-4938-BC09-F2E6A7E91E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA27B967-83E0-4938-BC09-F2E6A7E91E94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45A01D09-07EF-4445-9A0E-E2D94244CE34}
+	EndGlobalSection
+EndGlobal
