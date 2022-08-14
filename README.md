@@ -1,7 +1,7 @@
 
 # InfoTrack technical test
 
-This is a project of getting ranks of your url in google search results.
+This is a project of getting ranks of your url in google search results. It includes baisc feature and extra feature like search history. I wish I could have more time to add other search engine feature.
 
 ## Design
 
