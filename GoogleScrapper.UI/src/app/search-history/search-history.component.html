@@ -1,0 +1,34 @@
+<mat-card class="form-container">
+    <form class="form">
+        <tr>
+            <td><button mat-raised-button (click)="searchHistory()">Show search history</button></td>
+        </tr>
+        <table mat-table class="full-width" [dataSource]="historyDataSource" cellspacing="0">
+            <ng-container matColumnDef="createTime">
+                <th mat-header-cell *matHeaderCellDef> Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.createTime}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="searchPhrase">
+                <th mat-header-cell *matHeaderCellDef> Key Word </th>
+                <td mat-cell *matCellDef="let element"> {{element.searchPhrase}} </td>
+              </ng-container>
+            
+              <!-- Weight Column -->
+              <ng-container matColumnDef="matchUrl">
+                <th mat-header-cell *matHeaderCellDef> Url </th>
+                <td mat-cell *matCellDef="let element"> {{element.matchUrl}} </td>
+              </ng-container>
+            
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="ranks">
+                <th mat-header-cell *matHeaderCellDef> Ranks </th>
+                <td mat-cell *matCellDef="let element"> {{element.ranks}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+        </table>
+    </form> 
+</mat-card>

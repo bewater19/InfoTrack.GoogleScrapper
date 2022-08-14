@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace GoogleScrapper.Domain.Interfaces
 {
-    public interface ISearchService
+    public interface ISearchRepository : IRepository<SearchResult>
     {
-        Task<SearchResult> GoogleSearchTop100Async(string searchPhrase, string matchUrl);
-
-        Task<List<SearchResult>> GetSearchHistory();
     }
 }

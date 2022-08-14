@@ -11,7 +11,7 @@ import { SearchService } from '../services/search.service';
 export class SearchComponent implements OnInit {
   
   searchQuery : SearchQuery = { matchUrl : "", searchPhrase : "" } ;
-  searchResult : SearchResult = { ranks : "" } ;
+  searchResult = {} as SearchResult;
 
   constructor(private searchService:SearchService) { }
 

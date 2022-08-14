@@ -1,0 +1,57 @@
+.form-container{
+    margin: 20px;
+}
+
+.form {
+    min-width: 120px;
+    /* max-width: 1200px; */
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+
+td {
+    padding-right: 8px;
+}
+
+tr {
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+table {
+  width: 100%;
+}
+
+button {
+  margin: 16px 8px;
+}
+
+
+.mat-column-createTime {
+    flex: 0 0 10% !important;
+    min-width: 200px !important;
+}
+.mat-column-searchPhrase {
+    flex: 0 0 20% !important;
+    min-width: 200px !important;
+}
+
+.mat-column-matchUrl {
+    flex: 0 0 20% !important;
+    min-width: 200px !important;
+}
+.mat-column-ranks {
+    flex: 0 0 50% !important;
+    min-width: 200px !important;
+}

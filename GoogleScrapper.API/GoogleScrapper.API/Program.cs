@@ -1,4 +1,5 @@
 using GoogleScrapper.Application;
+using GoogleScrapper.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 var AllowAllOrigins = "_allowAllOrigins";
@@ -27,6 +28,7 @@ builder.Services.AddCors(options =>
 //});
 
 builder.Services.AddGoogleScrapperApplication();
+builder.Services.AddGoogleScrapperInfrastructure(builder.Configuration);
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

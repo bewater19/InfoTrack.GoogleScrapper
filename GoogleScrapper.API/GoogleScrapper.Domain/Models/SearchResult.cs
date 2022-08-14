@@ -8,15 +8,10 @@ namespace GoogleScrapper.Domain.Models
 {
     public class SearchResult
     {
+        public int id { get; set; }
+        public DateTime CreateTime { get; set; }
         public string SearchPhrase { get; set; }
         public string MatchUrl { get; set; }
         public string Ranks { get; set; }
-
-        public SearchResult(string searchPhase, string matchUrl, string ranks)
-        {
-            this.SearchPhrase = searchPhase;
-            this.MatchUrl = matchUrl;
-            this.Ranks = ranks;
-        }
     }
 }

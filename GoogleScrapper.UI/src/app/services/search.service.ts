@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
 })
 export class SearchService {
 
-  apiUrl = "http://localhost:5000/Search"
+  baseUrl = "http://localhost:5000/"
   headers = new HttpHeaders({ 'Content-Type': 'application/json','Accept': 'application/json', 'Access-Control-Allow-Origin': '*' });
 
   constructor(private http: HttpClient, private messageService:MessageService) { }
@@ -18,11 +18,21 @@ export class SearchService {
   search(searchQuery: SearchQuery): Observable<any> {
       let getparams = new HttpParams().set('MatchUrl', searchQuery.matchUrl).set('SearchPhrase', searchQuery.searchPhrase);
       let httpOptions = { headers : this.headers, params : getparams };
-      return this.http.get<any>(this.apiUrl, httpOptions).pipe(
+      let apiUrl = this.baseUrl + "Search";
+      return this.http.get<any>(apiUrl, httpOptions).pipe(
         tap(),
         catchError(this.handleError<any>('get'))
       )
   }
+
+  searchHistory(): Observable<any> {
+    let httpOptions = { headers : this.headers };
+    let apiUrl = this.baseUrl + "SearchHistory";
+    return this.http.get<any>(apiUrl, httpOptions).pipe(
+      tap(),
+      catchError(this.handleError<any>('get'))
+    )
+}
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

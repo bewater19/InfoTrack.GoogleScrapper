@@ -10,7 +10,27 @@ namespace GoogleScrapper.Domain.Services
 {
     public class SearchService : ISearchService
     {
-        public SearchService() { }
+        private readonly ISearchRepository _searchRepository;
+        public SearchService(ISearchRepository searchRepository)
+        {
+            _searchRepository = searchRepository;
+        }
+
+        /// <summary>
+        /// This is function to search top 100 result in google.com & save record in DB
+        /// </summary>
+        /// <param name="searchPhase"></param>
+        /// <param name="matchUrl"></param>
+        /// <returns>
+        /// return the ranks of matchUrl hits the search results
+        /// </returns>
+        public async Task<SearchResult> GoogleSearchTop100Async(string searchPhrase, string matchUrl)
+        {
+            SearchResult searchResult = await SearchAsync(searchPhrase, matchUrl);
+            _searchRepository.Add(searchResult);
+            await _searchRepository.SaveChangesAsync();
+            return searchResult;
+        }
 
         /// <summary>
         /// This is function to search top 100 result in google.com
@@ -20,7 +40,7 @@ namespace GoogleScrapper.Domain.Services
         /// <returns>
         /// return the ranks of matchUrl hits the search results
         /// </returns>
-        public async Task<SearchResult> GoogleSearchTop100Async(string searchPhrase, string matchUrl)
+        public async Task<SearchResult> SearchAsync(string searchPhrase, string matchUrl)
         {
             string searchUrl = $"http://www.google.com/search?num=100&q={searchPhrase}";
             var result = await new HtmlWeb().LoadFromWebAsync(searchUrl);
@@ -33,8 +53,21 @@ namespace GoogleScrapper.Domain.Services
                                     .Select(x => x.i + 1)
                                     .ToList();
 
-            SearchResult searchResult = new SearchResult(searchPhrase, matchUrl, ranks.Count() > 0 ? string.Join(",", ranks) : "0");
+            SearchResult searchResult = new SearchResult { SearchPhrase = searchPhrase, MatchUrl = matchUrl, Ranks = ranks.Count() > 0 ? string.Join(",", ranks) : "0", CreateTime = DateTime.Now };
             return searchResult;
+        }
+
+        /// <summary>
+        /// This is function to retrieve search history from DB
+        /// </summary>
+        /// <param name="searchPhase"></param>
+        /// <param name="matchUrl"></param>
+        /// <returns>
+        /// return the ranks of matchUrl hits the search results
+        /// </returns>
+        public async Task<List<SearchResult>> GetSearchHistory()
+        {
+            return _searchRepository.Query().ToList();
         }
     }
 }
